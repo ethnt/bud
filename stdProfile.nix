@@ -10,12 +10,12 @@ in
   bud.cmds = with pkgs; {
 
     # Onboarding
-    up = {
-      writer = budUtils.writeBashWithPaths [ installPkgs.nixos-generate-config git mercurial coreutils ];
-      synopsis = "up";
-      help = "Generate $FLAKEROOT/hosts/\${HOST//\./\/}/default.nix";
-      script = ./scripts/onboarding-up.bash;
-    };
+    # up = {
+    #   writer = budUtils.writeBashWithPaths [ installPkgs.nixos-generate-config git mercurial coreutils ];
+    #   synopsis = "up";
+    #   help = "Generate $FLAKEROOT/hosts/\${HOST//\./\/}/default.nix";
+    #   script = ./scripts/onboarding-up.bash;
+    # };
 
     # Utils
     update = {

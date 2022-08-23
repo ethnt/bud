@@ -1,11 +1,8 @@
-let
-  eachSystem = import ./eachSystem.nix;
-in
+let eachSystem = import ./eachSystem.nix;
 
-supportedSystems:
-imprt: inputs:
+in supportedSystems: imprt: inputs:
 eachSystem supportedSystems (system:
   import imprt {
-    inherit inputs system; # The super stupid flakes contract `{ inputs, system }`
-  }
-)
+    inherit inputs
+      system; # The super stupid flakes contract `{ inputs, system }`
+  })

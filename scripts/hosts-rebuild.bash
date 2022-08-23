@@ -9,4 +9,4 @@ if [ -x /run/wrappers/bin/sudo ]; then
   set -- --use-remote-sudo "$@"
 fi
 
-nixos-rebuild --flake "$FLAKEROOT#$HOST" "$@"
+darwin-rebuild --flake "$FLAKEROOT#$HOST" "$@"

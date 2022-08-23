@@ -43,8 +43,9 @@ devshell.mkShell {
   name = "bud";
   packages = with pkgs; [
     fd
-    nixpkgs-fmt
+    nixfmt
     nixUnstable
+    beautysh
   ];
 
   # tempfix: remove when merged https://github.com/numtide/devshell/pull/123
@@ -66,7 +67,7 @@ devshell.mkShell {
     {
       name = "fmt";
       help = "Check Nix formatting";
-      command = "nixpkgs-fmt \${@} $PRJ_ROOT";
+      command = "nixfmt $PRJ_ROOT/**/*.nix \${@}";
     }
     {
       name = "evalnix";

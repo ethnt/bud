@@ -20,7 +20,7 @@
 
   # pass the host's config for inferring the reverse dns fqdn of this host
   # so that this script can accessor the _current_ host identifier in
-  # self.nixosConfigurations.<identifier>
+  # self.darwinConfigurations.<identifier>
 , hostConfig ? null
 
   # pass a string to the path where you hold a (writable) local copy of the flake repo

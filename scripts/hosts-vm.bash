@@ -2,7 +2,7 @@
 
 HOST="${1:-$HOST}"
 
-attr="$FLAKEROOT#nixosConfigurations.\"$HOST\".config.system.build.vm"
+attr="$FLAKEROOT#darwinConfigurations.\"$HOST\".config.system.build.vm"
 
 nix build "$attr" "${@:2}"
 

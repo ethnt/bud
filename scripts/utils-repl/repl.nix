@@ -11,7 +11,7 @@ let
     else { }
   ;
 
-  Me = Flake.nixosConfigurations.${host} or { };
+  Me = Flake.darwinConfigurations.${host} or { };
   Channels = Flake.pkgs.${builtins.currentSystem} or { };
 
   LoadFlake = path: builtins.getFlake (toString path);

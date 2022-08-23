@@ -24,27 +24,11 @@ in
       help = "Update and commit $FLAKEROOT/flake.lock file or specific input";
       script = ./scripts/utils-update.bash;
     };
-    burn = {
-      writer = budUtils.writeBashWithPaths [ nixUnstable git mercurial coreutils gawk util-linux fzf pv ];
-      synopsis = "burn";
-      help = "Burn an ISO on a removable device that you interactively choose (build the iso first)";
-      script = ./scripts/burn.bash;
-    };
     repl = {
       writer = budUtils.writeBashWithPaths [ nixUnstable gnused git mercurial coreutils ];
       synopsis = "repl [FLAKE]";
       help = "Enter a repl with the flake's outputs";
       script = (import ./scripts/utils-repl pkgs).outPath;
-    };
-    ssh-show = {
-      writer = budUtils.writeBashWithPaths [ openssh coreutils ];
-      synopsis = "ssh-show HOST USER | USER@HOSTNAME";
-      help = "Show target host's SSH ed25519 key";
-      description = ''
-        Use this script to quickly determine the target host
-        key for which to encrypt an agenix secret.
-      '';
-      script = ./scripts/utils-ssh-show.bash;
     };
 
     # Home-Manager
@@ -62,12 +46,14 @@ in
       help = "Build a variant of your configuration from system.build";
       script = ./scripts/hosts-build.bash;
     };
+
     vm = {
       writer = budUtils.writeBashWithPaths [ nixUnstable git mercurial coreutils ];
       synopsis = "vm HOST";
       help = "Generate & run a one-shot vm for HOST";
       script = ./scripts/hosts-vm.bash;
     };
+
     install = {
       writer = budUtils.writeBashWithPaths [ installPkgs.nixos-install git mercurial coreutils ];
       synopsis = "install HOST [ARGS]";

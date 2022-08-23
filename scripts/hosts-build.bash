@@ -6,6 +6,6 @@ if [[ ! "$output" == "$1" ]]; then
     HOST="${1}"
 fi
 
-attr="$FLAKEROOT#nixosConfigurations.\"$HOST\".config.system.build.$output"
+attr="$FLAKEROOT#darwinConfigurations.\"$HOST\".config.system.build.$output"
 
 nix build "$attr" "${@:3}"

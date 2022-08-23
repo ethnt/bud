@@ -84,7 +84,7 @@ let
     else if hostConfig != null then
       hostConfig.networking.hostName
     # fall back to reverse dns from hostname --fqdn command
-    else "$(IFS='.'; parts=($(hostname --fqdn)); IFS=' '; HOST=$(for (( idx=\${#parts[@]}-1 ; idx>=0 ; idx-- )) ; do printf \"\${parts[idx]}.\"; done); echo \${HOST:: -1})"
+    else "$(IFS='.'; parts=($(hostname)); IFS=' '; HOST=$(for (( idx=\${#parts[@]}-1 ; idx>=0 ; idx-- )) ; do printf \"\${parts[idx]}.\"; done); echo \${HOST:: -1})"
   ;
 
   flakeRoot =

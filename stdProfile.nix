@@ -31,7 +31,7 @@
 
     rebuild = {
       writer =
-        budUtils.writeBashWithPaths [ installPkgs.nixos-rebuild git coreutils ];
+        budUtils.writeBashWithPaths [ git coreutils ];
       synopsis = "rebuild HOST (switch|boot|test)";
       help = "Shortcut for darwin-rebuild";
       script = ./scripts/hosts-rebuild.bash;

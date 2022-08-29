@@ -9,9 +9,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
     devshell.url = "github:numtide/devshell";
     beautysh.url = "github:lovesegfault/beautysh";
+    darwin.url = "github:LnL7/nix-darwin";
   };
 
-  outputs = { self, nixpkgs, devshell, beautysh, ... }:
+  outputs = { self, nixpkgs, devshell, beautysh, darwin, ... }:
     let
 
       # Unofficial Flakes Roadmap - Polyfills
@@ -36,7 +37,7 @@
         import src ({ inherit inputs; } // args);
 
       # Dependency Groups - Style
-      devShellInputs = { inherit nixpkgs devshell beautysh; };
+      devShellInputs = { inherit nixpkgs devshell beautysh darwin; };
 
       # .. we hope you like this style.
       # .. it's adopted by a growing number of projects.

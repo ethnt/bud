@@ -35,7 +35,6 @@ let
   description = "Your highly customizable system ctl";
 
   budModule = import ./module.nix;
-  stdProfile = import ./stdProfile.nix;
 
   pkgsModule = { config, lib, ... }: {
     config = {
@@ -58,7 +57,7 @@ let
   };
 
   evaled = lib.evalModules {
-    modules = [ pkgsModule budUtilsModule budModule stdProfile ] ++ budModules;
+    modules = [ pkgsModule budUtilsModule budModule ] ++ budModules;
   };
 
 in
